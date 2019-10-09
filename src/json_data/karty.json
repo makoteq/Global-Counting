@@ -1,8 +1,8 @@
 [
   {
     "tytul": "Uchodźcy u bram",
-    "opis": "Czy wpuścić uchodzców puścić",
-    "img": "../assets/info",
+    "opis": "Czy wpuścić uchodzców",
+    "img": "@/assets/logo.png",
     "tak": {
       "przeludnienie": -1,
       "klimat": 0,

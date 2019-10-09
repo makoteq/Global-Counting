@@ -2,10 +2,12 @@
   <div>
     <div class="karta">
       <h3 class="font-weight-bold">{{tytul}}</h3>
+      <img  :src="require('@/assets/logo.png')" alt="photo">
       <p class="font-weight-light">{{opis}}</p>
+      
     </div>
-    <button @click="tak" class="btn-primary">tak</button>
-    <button @click="nie" class="btn-primary">nie</button>
+    <button @click="submit('tak')" class="btn-primary">tak</button>
+    <button @click="submit('nie')" class="btn-primary">nie</button>
   </div>
 </template>
 
@@ -15,6 +17,7 @@ export default {
   name: "pole",
   data() {
     return {
+      img: '',
       tytul: "test",
       opis: "test opisu",
       przeludnienie: 0,
@@ -25,16 +28,15 @@ export default {
     };
   },
   methods: {
-    tak() {
-      this.$root.$emit(
-        "update",
+    submit(arg) {
+      //   this.img= require(this.kartyInfo[0].img+);
+      this.$root.$emit("update",
         this.przeludnienie,
         this.klimat,
         this.polityka,
         this.zasoby
       );
     },
-    nie() {}
   },
   mounted() {
     //losowanko
@@ -44,6 +46,8 @@ export default {
     this.klimat = this.kartyInfo[0].tak.klimat;
     this.polityka = this.kartyInfo[0].tak.polityka;
     this.zasoby = this.kartyInfo[0].tak.zasoby;
+ 
+    console.log(this.kartyInfo[0].img);
   }
 };
 </script>
