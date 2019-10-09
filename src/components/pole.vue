@@ -2,7 +2,7 @@
   <div>
     <div class="karta">
       <h3 class="font-weight-bold">{{tytul}}</h3>
-      <img  :src="require('@/assets/logo.png')" alt="photo">
+      <img  :src="img" alt="photo">
       <p class="font-weight-light">{{opis}}</p>
       
     </div>
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     submit(arg) {
-      //   this.img= require(this.kartyInfo[0].img+);
+   
       this.$root.$emit("update",
         this.przeludnienie,
         this.klimat,
@@ -40,6 +40,7 @@ export default {
   },
   mounted() {
     //losowanko
+     this.img=this.kartyInfo[0].img;
     this.tytul = this.kartyInfo[0].tytul;
     this.opis = this.kartyInfo[0].opis;
     this.przeludnienie = this.kartyInfo[0].tak.przeludnienie;

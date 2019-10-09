@@ -2,7 +2,24 @@
   {
     "tytul": "Uchodźcy u bram",
     "opis": "Czy wpuścić uchodzców",
-    "img": "@/assets/logo.png",
+    "img": "/assets/logo.png",
+    "tak": {
+      "przeludnienie": -1,
+      "klimat": 0,
+      "polityka": 1,
+      "zasoby": 0
+    },
+    "nie": {
+      "przeludnienie": 1,
+      "klimat": 0,
+      "polityka": -1,
+      "zasoby": 0
+    }
+  },
+  {
+    "tytul": "Uchodźcy u bram",
+    "opis": "Czy wpuścić uchodzców",
+    "img": "/assets/logo2.jpg",
     "tak": {
       "przeludnienie": -1,
       "klimat": 0,
