@@ -26,10 +26,10 @@
 </div>
  -->
       <div class="row">
-      <div class="timer col-sm text-center">{{przeludnienie}}<i v-if="circle1">	&bull;</i></div>
-      <div class="timer col-sm text-center">{{klimat}}<i v-if="circle2">	&bull;</i></div>
-      <div class="timer col-sm text-center">{{polityka}}<i v-if="circle3">	&bull;</i></div>
-      <div class="timer col-sm text-center">{{zasoby}}<i v-if="circle4">	&bull;</i></div>
+      <div class="timer col-sm text-center">{{przeludnienie}} <transition name="fade"> <i class="circle" v-if="circle1">	&bull;</i></transition></div>
+      <div class="timer col-sm text-center">{{klimat}}<transition name="fade"> <i class="circle" v-if="circle2">	&bull;</i></transition></div>
+      <div class="timer col-sm text-center">{{polityka}}<transition name="fade"> <i class="circle" v-if="circle3">	&bull;</i></transition></div>
+      <div class="timer col-sm text-center">{{zasoby}}<transition name="fade"> <i class="circle" v-if="circle4">	&bull;</i></transition></div>
       </div>
     </div>
   </div>
@@ -45,9 +45,9 @@ export default {
       polityka:15,
       zasoby:15,
       circle1:0,
-       circle2:0,
-        circle3:0,
-         circle4:0
+      circle2:0,
+      circle3:0,
+      circle4:0
     };
   },
   methods: {
@@ -68,6 +68,13 @@ export default {
     this.klimat+=klimat*5
     this.przeludnienie+=przeludnienie*5
     this.zasoby+=zasoby*5
+   })
+      this.$root.$on('circleLeave',()=>
+   {
+      this.circle1=0
+      this.circle2=0
+      this.circle3=0
+      this.circle4=0
    })
    this.$root.$on('circle',(przeludnienie,klimat,polityka,zasoby)=>
    {
@@ -109,7 +116,15 @@ export default {
   margin:0 auto;
 }
 .timer {
+  font-family: 'Source Code Pro', monospace;
   font-size:2em;
   font-weight: bold;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

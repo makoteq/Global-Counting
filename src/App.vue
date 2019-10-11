@@ -6,8 +6,9 @@
 
 <style lang="scss">
 @import './assets/colors.scss';
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900&display=swap&subset=latin-ext');
 #app {
-  font-family:Helvetica, sans-serif;
+  font-family: 'Source Code Pro', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

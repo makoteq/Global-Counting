@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="karta">
-      <h3 class="font-weight-bold">{{tytul}}</h3>
+      <h3 style="font-weight:900!important;" class="font-weight-bold">{{tytul}}</h3>
       <img width="300px" :src="img" alt="photo" />
       <p class="font-weight-light">{{opis}}</p>
     </div>
-    <button :disabled="!disable" @mouseover="over(1)" @click="submit(1)" class="btn-primary">tak</button>
-    <button  :disabled="!disable" @mouseover="over(0)" @click="submit(0)" class="btn-primary">nie</button>
+    <button :disabled="!disable" @mouseleave="circleLeave()" @mouseover="over(1)" @click="submit(1)" class="btn-primary">  tak  </button>
+    <button  :disabled="!disable" @mouseleave="circleLeave()" @mouseover="over(0)" @click="submit(0)" class="btn-primary">  nie </button>
   </div>
 </template>
 
@@ -39,11 +39,7 @@ export default {
     },
     //download
     down(rand, arg) {
-          if (this.i == this.count-1) {
-        this.disable = 0;
-      } else {
-        this.i++;
-      }
+  
     
       if (arg == 1) {
         this.przeludnienie = this.kartyInfo[rand].tak.przeludnienie;
@@ -55,6 +51,11 @@ export default {
         this.klimat = this.kartyInfo[rand].nie.klimat;
         this.polityka = this.kartyInfo[rand].nie.polityka;
         this.zasoby = this.kartyInfo[rand].nie.zasoby;
+      }
+        if (this.i == this.count-1) {
+        this.disable = 0;
+      } else {
+        this.i++;
       }
       this.img = this.kartyInfo[rand].img;
       this.tytul = this.kartyInfo[rand].tytul;
@@ -81,6 +82,10 @@ export default {
           this.zasoby
       );
     },
+    circleLeave(){
+      console.log('gggggggg')
+      this.$root.$emit("circleLeave");
+    },
     //losowamnie
     random(a) {
       //mieszanko tablic
@@ -94,8 +99,8 @@ export default {
       return a;
     },
     over(arg){
-      console.log(this.i-1)
-      let rand =this.numbers[this.i+1];
+      console.log(this.i)
+      let rand =this.numbers[this.i];
        if (arg == 1) {
         this.przeludnienie = this.kartyInfo[rand].tak.przeludnienie;
         this.klimat = this.kartyInfo[rand].tak.klimat;
@@ -125,6 +130,7 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/colors.scss';
 .karta {
+  font-family: 'Source Code Pro', monospace;
   color:white;
   width: 30vw;
   background-color: $main;
