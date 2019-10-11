@@ -1,36 +1,202 @@
 [
-  {
-    "tytul": "Uchodźcy u bram",
-    "opis": "Czy wpuścić uchodzców",
-    "img": "/assets/logo.png",
-    "tak": {
-      "przeludnienie": -1,
-      "klimat": 0,
-      "polityka": 1,
-      "zasoby": 0
+    {
+      "tytul": "Uchodźcy przy granicy",
+      "opis": "Uchodźdzcy z bliskiego wschodu chcą wejsć do twojego kraju. Wpuścić ich?",
+      "img":"../assets/logo.png",
+
+        "tak":{
+          "przeludnienie": -1,
+          "klimat": 0,
+          "polityka": 1,
+          "zasoby": 0
+        },
+
+        "nie":{
+          "przeludnienie": 1,
+          "klimat": 0,
+          "polityka": -1,
+          "zasoby": 0
+        }
+    
     },
-    "nie": {
-      "przeludnienie": 1,
-      "klimat": 0,
-      "polityka": -1,
-      "zasoby": 0
-    }
-  },
-  {
-    "tytul": "Uchodźcy u bram",
-    "opis": "Czy wpuścić uchodzców",
-    "img": "/assets/logo2.jpg",
-    "tak": {
-      "przeludnienie": -1,
-      "klimat": 0,
-      "polityka": 1,
-      "zasoby": 0
+
+    {
+        "tytul": "Program kontroli urodzeń",
+        "opis": "W naszym kraju rodzi się zbyt dużo dzieci. CZy mamy wprowadzić program kontroli urodzeń?",
+        "img":"../assets/logo.png",
+
+          "tak":{
+            "przeludnienie": 1,
+            "klimat": 0,
+            "polityka": 1,
+            "zasoby": 0
+          },
+
+          "nie":{
+            "przeludnienie": -1,
+            "klimat": 0,
+            "polityka": 1,
+            "zasoby": 0
+          }
     },
-    "nie": {
-      "przeludnienie": 1,
-      "klimat": 0,
-      "polityka": -1,
-      "zasoby": 0
+
+    {
+      "tytul":"Oceanowy Odkurzacz",
+      "opis":"Naukowcy proszą ciebie o dofinansowanie w ramach wynalazku czyszczącego oceany z mikroplastik. Czy przydzielić środki?",
+      "img":"../assets/logo.png",
+
+      "tak":{
+        "przeludnienie": 0,
+        "klimat": 1,
+        "polityka": 0,
+        "zasoby": 0
+      },
+
+      "nie":{
+        "przeludnienie": 0,
+        "klimat": -1,
+        "polityka": 0,
+        "zasoby": 0
+      }
+    },
+
+    {
+      "tytul":"Złoża uranu",
+      "opis":"Znaleźlismy duże złoża uranu. Czy mamy je wydobyć?",
+      "img":"../assets/logo.png",
+
+      "tak":{
+        "przeludnienie": 0,
+        "klimat": 0,
+        "polityka": 1,
+        "zasoby": -1
+      },
+
+      "nie":{
+        "przeludnienie": 0,
+        "klimat": 0,
+        "polityka": -1,
+        "zasoby": 1
+      }
+    },
+
+    {
+      "tytul":"Plastki w piecach",
+      "opis":"Ludzie palą za dużo plastku w piecach. Interweniować?",
+      "img":"../assets/logo.png",
+
+      "tak":{
+        "przeludnienie": 0,
+        "klimat": 1,
+        "polityka": 0,
+        "zasoby": 0
+      },
+
+      "nie":{
+        "przeludnienie": 0,
+        "klimat": -1,
+        "polityka": 0,
+        "zasoby": 0
+      }
+    },
+
+    {
+      "tytul":"Ropa na morzu",
+      "opis":"Ostatnio nasi specjaliści odkryli złoża ropy naftowej na morzu. Czy powinniśmy zacząć ją wydobywać?",
+      "img":"../assets/logo.png",
+
+      "tak":{
+        "przeludnienie": 0,
+        "klimat": -1,
+        "polityka": 1,
+        "zasoby": -1
+      },
+
+      "nie":{
+        "przeludnienie": 0,
+        "klimat": 1,
+        "polityka": -1,
+        "zasoby": 1
+      }
+    },
+
+    {
+      "tytul":"Ścieki (fabryki)",
+      "opis":"Fabryki produkują za dużo szkodliwych ścieków. Wprowadzić grzywnę za nieoczyszczanie ścieków?",
+      "img":"../assets/logo.png",
+
+      "tak":{
+        "przeludnienie": 0,
+        "klimat": 1,
+        "polityka": 0,
+        "zasoby": 0
+      },
+
+      "nie":{
+        "przeludnienie": 0,
+        "klimat": -1,
+        "polityka": 0,
+        "zasoby": 0
+      }
+    },
+
+    {
+      "tytul":"Problem na bliskim wschodzie",
+      "opis":"Wojsko ma problemy na bliskim wschodzie. Dowództwo prosi cię o zezwolenie na atak nuklearny. Zezwolić?",
+      "img":"../assets/logo.png",
+
+      "tak":{
+        "przeludnienie": 1,
+        "klimat": -1,
+        "polityka": 1,
+        "zasoby": 0
+      },
+
+      "nie":{
+        "przeludnienie": -1,
+        "klimat": 1,
+        "polityka": -1,
+        "zasoby": 0
+      }
+    },
+
+    {
+      "tytul":"Pożyczka na kampanię (eko)",
+      "opis":"Sojusznik prosi nasz kraj o pożyczkę pieniędzy na kampanmię ekologiczną. Czy powinniśmy mu pożyczyć te pieniądze?",
+      "img":"../assets/logo.png",
+
+      "tak":{
+        "przeludnienie": 0,
+        "klimat": 1,
+        "polityka": 1,
+        "zasoby": 0
+      },
+
+      "nie":{
+        "przeludnienie": 0,
+        "klimat": -1,
+        "polityka": 0,
+        "zasoby": 0
+      }
+    },
+
+    {
+      "tytul":"Amazonia w ogniu",
+      "opis":"Amozonia płonie! Służby zajmujące się gaszeniem pożaru proszą o pomoc. Mamy pomóc?",
+      "img":"../assets/logo.png",
+
+      "tak":{
+        "przeludnienie": 0,
+        "klimat": 1,
+        "polityka": 1,
+        "zasoby": 1
+      },
+
+      "nie":{
+        "przeludnienie": 0,
+        "klimat": -1,
+        "polityka": -1,
+        "zasoby": -1
+      }
     }
-  }
-]
+  ]
