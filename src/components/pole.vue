@@ -33,13 +33,17 @@ export default {
   methods: {
     //click
     submit(arg) {
-        this.down(this.numbers[this.i], arg);
+        this.down(this.numbers[this.i+1], arg);
         this.send()
       console.log(this.numbers)
     },
     //download
     down(rand, arg) {
-      
+          if (this.i == this.count-1) {
+        this.disable = 0;
+      } else {
+        this.i++;
+      }
     
       if (arg == 1) {
         this.przeludnienie = this.kartyInfo[rand].tak.przeludnienie;
@@ -55,11 +59,7 @@ export default {
       this.img = this.kartyInfo[rand].img;
       this.tytul = this.kartyInfo[rand].tytul;
       this.opis = this.kartyInfo[rand].opis;
-        if (this.i == this.count-1) {
-        this.disable = 0;
-      } else {
-        this.i++;
-      }
+    
     },
     //wysyłanie danych zmian
     send(){
@@ -95,7 +95,7 @@ export default {
     },
     over(arg){
       console.log(this.i-1)
-      let rand =this.numbers[this.i];
+      let rand =this.numbers[this.i+1];
        if (arg == 1) {
         this.przeludnienie = this.kartyInfo[rand].tak.przeludnienie;
         this.klimat = this.kartyInfo[rand].tak.klimat;
