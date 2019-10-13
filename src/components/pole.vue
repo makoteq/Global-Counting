@@ -22,6 +22,7 @@
       @click="click(0)"
       class="btn-primary btn-lg"
     >nie</button>
+    <button v-if="!end" @click="results()" class="btn-dark btn-lg" >Go to results</button>
     <p class="years fixed-bottom">{{years}} lata u władzy</p>
   </div>
 </template>
@@ -52,6 +53,10 @@ export default {
     };
   },
   methods: {
+    //results
+    results(){
+      this.$router.push({name:'results'})
+    },
     //next
     submit() {
       this.disableSubmit = 0;
