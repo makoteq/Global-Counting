@@ -4,9 +4,10 @@
       <h3 style="font-weight:900!important;" class="font-weight-bold">{{tytul}}</h3>
       <img class="img-thumbnail" :src="img" alt="photo" />
       <p class="font-weight-light">{{opis}}</p>
-      <button :disabled="!disableSubmit" @click="submit()" class="btn-primary btn-lg">NEXT</button>
+      <button v-if="end" :disabled="!disableSubmit" @click="submit()" class="btn-primary btn-sm">NEXT</button>
     </div>
     <button
+      v-if="end"
       :disabled="!disable"
       @mouseleave="circleLeave()"
       @mouseover="over(1)"
@@ -14,18 +15,20 @@
       class="btn-primary btn-lg"
     >tak</button>
     <button
+    v-if="end"
       :disabled="!disable"
       @mouseleave="circleLeave()"
       @mouseover="over(0)"
       @click="click(0)"
       class="btn-primary btn-lg"
     >nie</button>
-    <p class="years fixed-bottom">{{years}} lat u władzy</p>
+    <p class="years fixed-bottom">{{years}} lata u władzy</p>
   </div>
 </template>
 
 <script>
 import karty from "../json_data/karty.json";
+import postacie from "../json_data/postacie.json";
 export default {
   name: "pole",
   data() {
@@ -37,26 +40,28 @@ export default {
       klimat: 1,
       polityka: 1,
       zasoby: 1,
+      postacieInfo:postacie,
       kartyInfo: karty,
       count: 9,
       numbers: [],
       i: 0,
       disable: 1,
-      disableSubmit:0,
-      years:0
+      disableSubmit: 0,
+      years: 0,
+      end:1
     };
   },
   methods: {
     //next
-    submit(){
-      this.disableSubmit=0;
+    submit() {
+      this.disableSubmit = 0;
       this.years++;
       this.disable = 1;
       this.circleLeave();
       if (this.i == this.count - 1) {
         this.disable = 0;
       } else {
-        this.i=this.i+1;
+        this.i = this.i + 1;
       }
       console.log(this.i + "mountede");
 
@@ -64,7 +69,7 @@ export default {
     },
     //click
     click(arg) {
-      this.disableSubmit=1;
+      this.disableSubmit = 1;
       this.disable = 0;
 
       this.send();
@@ -75,7 +80,7 @@ export default {
       this.img = this.kartyInfo[rand].img;
       this.tytul = this.kartyInfo[rand].tytul;
       this.opis = this.kartyInfo[rand].opis;
-    /* if (arg == 1) {
+      /* if (arg == 1) {
         this.przeludnienie = this.kartyInfo[rand].tak.przeludnienie;
         this.klimat = this.kartyInfo[rand].tak.klimat;
         this.polityka = this.kartyInfo[rand].tak.polityka;
@@ -140,18 +145,38 @@ export default {
     }
   },
   mounted() {
-        //generate array
-        for(let i=0;i<this.count+1;i++){
-        this.numbers.push(i);
-        console.log(i)
-        }
+    //generate array
+    for (let i = 0; i < this.count + 1; i++) {
+      this.numbers.push(i);
+      console.log(i);
+    }
 
-      this.$root.$on('lose',()=>
-   {
-     console.log('lose')
-       this.disable = 0;
-       this.$router.push({name:'results'})
-   })
+    this.$root.$on("lose", arg => {
+      this.end=0;
+      console.log("lose"+arg);
+      this.disable = 0;
+      this.disableSubmit = 0;
+      switch (arg) {
+        case 0:
+          this.tytul='Głód';
+          this.opis=this.postacieInfo[0].glod;
+          break;
+        case 1:
+          this.tytul='Śmierć';
+          this.opis=this.postacieInfo[0].smierc;
+          break;
+        case 2:
+          this.tytul='Wojna';
+          this.opis=this.postacieInfo[0].wojna;
+          break;
+        case 3:
+          this.tytul='Wojna'
+          this.opis=this.postacieInfo[0].wojna;
+          break;
+      }
+      // this.opis=this.postacie.arg;
+      //   this.$router.push({name:'results'})
+    });
     //losowanko
     this.numbers = this.random(this.numbers);
     console.log(this.numbers);

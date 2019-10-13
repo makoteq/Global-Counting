@@ -1,7 +1,7 @@
 <template>
     <div class="contener_karty container text-center w-75 ">
       <div class="row">
-      <div class="w-25 timer col-sm text-center">{{przeludnienie}}  <font-awesome-icon icon="users" /><transition name="fade"> <i class="circle" v-if="circle1">	&bull;</i></transition></div>
+      <div class="w-25 timer col-sm text-center">{{przeludnienie}}  <font-awesome-icon icon="users" /><transition name="fade"> <i class="circle " style="display-inline " v-if="circle1">	&bull;</i></transition></div>
       <div class="w-25 timer col-sm text-center">{{klimat}}  <font-awesome-icon style="font-size:1.1em" icon="leaf" /><transition name="fade"> <i class="circle" v-if="circle2">	&bull;</i></transition></div>
       <div class="w-25 timer col-sm text-center">{{polityka}}  <font-awesome-icon icon="handshake" /><transition name="fade"> <i class="circle" v-if="circle3">	&bull;</i></transition></div>
       <div class="w-25 timer col-sm text-center">{{zasoby}}  <font-awesome-icon icon="oil-can" /><transition name="fade"> <i class="circle" v-if="circle4">	&bull;</i></transition></div>
@@ -41,9 +41,19 @@ export default {
     this.klimat+=klimat*5
     this.przeludnienie+=przeludnienie*5
     this.zasoby+=zasoby*5
-          if( this.przeludnienie==0 || this.klimat==0 || this.polityka==0 || this.zasoby==0){
-       this.$root.$emit("lose");
-    }
+   
+   if(this.przeludnienie==0){
+   this.$root.$emit("lose",0);
+   }else if(this.klimat==0){
+   this.$root.$emit("lose",1);
+   }else if(this.polityka==0){
+   this.$root.$emit("lose",2);
+   }else if(this.zasoby==0) {
+       this.$root.$emit("lose",3);
+   }
+     
+    
+
    })
       this.$root.$on('circleLeave',()=>
    {
@@ -97,7 +107,7 @@ export default {
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity .2s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
