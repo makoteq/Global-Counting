@@ -1,38 +1,12 @@
 <template>
-  <div class="hello">
-    <div class="contener_karty container text-center ">
-      <!-- 
+    <div class="contener_karty container text-center w-75 ">
       <div class="row">
-<div class="progress col-sm ">
-  <div id="dynamic" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="20" :style="{width: przeludnienie+'%'}">
-    <span id="current-progress"></span>
-  </div>
-</div>
-<div class="progress col-sm ">
-  <div id="dynamic" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="20" :style="{width: klimat+'%'}">
-    <span id="current-progress"></span>
-  </div>
-</div>
-<div class="progress  col-sm ">
-  <div id="dynamic" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="20" :style="{width: polityka+'%'}">
-    <span id="current-progress"></span>
-  </div>
-</div>
-<div class="progress col-sm ">
-  <div id="dynamic" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="20" :style="{width: zasoby+'%'}">
-    <span id="current-progress"></span>
-  </div>
-</div>
-</div>
- -->
-      <div class="row">
-      <div class="timer col-sm text-center">{{przeludnienie}} <transition name="fade"> <i class="circle" v-if="circle1">	&bull;</i></transition></div>
-      <div class="timer col-sm text-center">{{klimat}}<transition name="fade"> <i class="circle" v-if="circle2">	&bull;</i></transition></div>
-      <div class="timer col-sm text-center">{{polityka}}<transition name="fade"> <i class="circle" v-if="circle3">	&bull;</i></transition></div>
-      <div class="timer col-sm text-center">{{zasoby}}<transition name="fade"> <i class="circle" v-if="circle4">	&bull;</i></transition></div>
+      <div class="w-25 timer col-sm text-center">{{przeludnienie}}  <font-awesome-icon icon="users" /><transition name="fade"> <i class="circle" v-if="circle1">	&bull;</i></transition></div>
+      <div class="w-25 timer col-sm text-center">{{klimat}}  <font-awesome-icon style="font-size:1.1em" icon="leaf" /><transition name="fade"> <i class="circle" v-if="circle2">	&bull;</i></transition></div>
+      <div class="w-25 timer col-sm text-center">{{polityka}}  <font-awesome-icon icon="handshake" /><transition name="fade"> <i class="circle" v-if="circle3">	&bull;</i></transition></div>
+      <div class="w-25 timer col-sm text-center">{{zasoby}}  <font-awesome-icon icon="oil-can" /><transition name="fade"> <i class="circle" v-if="circle4">	&bull;</i></transition></div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -63,11 +37,13 @@ export default {
    this.$root.$on('update',(przeludnienie,klimat,polityka,zasoby)=>
    {
   // this.all();
-    console.log('up')
     this.polityka+=polityka*5
     this.klimat+=klimat*5
     this.przeludnienie+=przeludnienie*5
     this.zasoby+=zasoby*5
+          if( this.przeludnienie==0 || this.klimat==0 || this.polityka==0 || this.zasoby==0){
+       this.$root.$emit("lose");
+    }
    })
       this.$root.$on('circleLeave',()=>
    {
@@ -111,14 +87,13 @@ export default {
   width:100px;
 }
 .contener_karty{
-  width:500px;
-  height:100px;
   margin:0 auto;
 }
 .timer {
   font-family: 'Source Code Pro', monospace;
   font-size:2em;
   font-weight: bold;
+  padding: 0;
 }
 
 .fade-enter-active, .fade-leave-active {
