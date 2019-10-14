@@ -2,9 +2,9 @@
   <div>
     <div class="karta container w-75">
       <h3 style="font-weight:900!important;" class="font-weight-bold">{{tytul}}</h3>
-      <img class="img-thumbnail" :src="img" alt="photo" />
+      <img class="img-thumbnail" :src="img" alt="photo">
       <p class="font-weight-light">{{opis}}</p>
-      <button v-if="end" :disabled="!disableSubmit" @click="submit()" class="btn-primary btn-sm">NEXT</button>
+      <button v-if="end" :disabled="!disableSubmit" @click="submit()" class="btn-black btn-sm">NEXT</button>
     </div>
     <button
       v-if="end"
@@ -12,17 +12,19 @@
       @mouseleave="circleLeave()"
       @mouseover="over(1)"
       @click="click(1)"
-      class="btn-primary btn-lg"
+      class="btn-black btn-lg"
     >tak</button>
     <button
-    v-if="end"
+      v-if="end"
       :disabled="!disable"
       @mouseleave="circleLeave()"
       @mouseover="over(0)"
       @click="click(0)"
-      class="btn-primary btn-lg"
+      class="btn-black btn-lg"
     >nie</button>
-    <button v-if="!end" @click="results()" class="btn-dark btn-lg" >Go to results</button>
+    <router-link v-if="!end" to="results">
+      <button  class="btn-dark btn-lg">Go to results</button>
+    </router-link>
     <p class="years fixed-bottom">{{years}} lata u władzy</p>
   </div>
 </template>
@@ -41,7 +43,7 @@ export default {
       klimat: 1,
       polityka: 1,
       zasoby: 1,
-      postacieInfo:postacie,
+      postacieInfo: postacie,
       kartyInfo: karty,
       count: 9,
       numbers: [],
@@ -49,21 +51,18 @@ export default {
       disable: 1,
       disableSubmit: 0,
       years: 0,
-      end:1
+      end: 1
     };
   },
   methods: {
-    //results
-    results(){
-      this.$router.push({name:'results'})
-    },
     //next
     submit() {
       this.disableSubmit = 0;
       this.years++;
       this.disable = 1;
       this.circleLeave();
-      if (this.i == this.count - 1) {
+      this.send();
+      if (this.i === this.count - 1) {
         this.disable = 0;
       } else {
         this.i = this.i + 1;
@@ -76,8 +75,8 @@ export default {
     click(arg) {
       this.disableSubmit = 1;
       this.disable = 0;
+      this.circle();
 
-      this.send();
       console.log(this.numbers);
     },
     //download
@@ -135,7 +134,7 @@ export default {
     over(arg) {
       console.log(this.i);
       let rand = this.numbers[this.i];
-      if (arg == 1) {
+      if (arg === 1) {
         this.przeludnienie = this.kartyInfo[rand].tak.przeludnienie;
         this.klimat = this.kartyInfo[rand].tak.klimat;
         this.polityka = this.kartyInfo[rand].tak.polityka;
@@ -157,28 +156,12 @@ export default {
     }
 
     this.$root.$on("lose", arg => {
-      this.end=0;
-      console.log("lose"+arg);
+      this.end = 0;
+      console.log("lose" + arg);
       this.disable = 0;
       this.disableSubmit = 0;
-      switch (arg) {
-        case 0:
-          this.tytul='Głód';
-          this.opis=this.postacieInfo[0].glod;
-          break;
-        case 1:
-          this.tytul='Śmierć';
-          this.opis=this.postacieInfo[0].smierc;
-          break;
-        case 2:
-          this.tytul='Wojna';
-          this.opis=this.postacieInfo[0].wojna;
-          break;
-        case 3:
-          this.tytul='Wojna'
-          this.opis=this.postacieInfo[0].wojna;
-          break;
-      }
+      this.tytul = this.postacieInfo[arg].tytul;
+      this.opis = this.postacieInfo[arg].opis;
       // this.opis=this.postacie.arg;
       //   this.$router.push({name:'results'})
     });
