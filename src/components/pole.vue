@@ -10,7 +10,7 @@
       v-if="end"
       :disabled="!disable"
       @mouseleave="circleLeave()"
-      @mouseover="over(1)"
+      @mouseover="circle('tak')"
       @click="click(1)"
       class="btn-black btn-lg"
     >tak</button>
@@ -18,7 +18,7 @@
       v-if="end"
       :disabled="!disable"
       @mouseleave="circleLeave()"
-      @mouseover="over(0)"
+      @mouseover="circle('nie')"
       @click="click(0)"
       class="btn-black btn-lg"
     >nie</button>
@@ -51,40 +51,44 @@ export default {
       disable: 1,
       disableSubmit: 0,
       years: 0,
-      end: 1
+      end: 1,
+      wybor:0
     };
   },
   methods: {
     //next
     submit() {
+      
       this.disableSubmit = 0;
       this.years++;
       this.disable = 1;
       this.circleLeave();
+      this.down(this.wybor);
       this.send();
-      if (this.i === this.count - 1) {
+          if (this.i === this.count - 1) {
         this.disable = 0;
       } else {
         this.i = this.i + 1;
       }
+      this.img = this.kartyInfo[this.numbers[this.i]].img;
+      this.tytul = this.kartyInfo[this.numbers[this.i]].tytul;
+      this.opis = this.kartyInfo[this.numbers[this.i]].opis;
       console.log(this.i + "mountede");
 
-      this.down(this.numbers[this.i]);
+ 
     },
     //click
     click(arg) {
+      this.wybor = arg;
       this.disableSubmit = 1;
       this.disable = 0;
-      this.circle();
-
-      console.log(this.numbers);
+      console.log()
     },
     //download
-    down(rand, arg) {
-      this.img = this.kartyInfo[rand].img;
-      this.tytul = this.kartyInfo[rand].tytul;
-      this.opis = this.kartyInfo[rand].opis;
-      /* if (arg == 1) {
+    down( arg) {
+       let rand = this.numbers[this.i];
+       console.log(this.i)
+       if (arg == 1) {
         this.przeludnienie = this.kartyInfo[rand].tak.przeludnienie;
         this.klimat = this.kartyInfo[rand].tak.klimat;
         this.polityka = this.kartyInfo[rand].tak.polityka;
@@ -94,10 +98,15 @@ export default {
         this.klimat = this.kartyInfo[rand].nie.klimat;
         this.polityka = this.kartyInfo[rand].nie.polityka;
         this.zasoby = this.kartyInfo[rand].nie.zasoby;
-      }*/
+      }
     },
     //wysyłanie danych zmian
     send() {
+      console.log(this.i)
+      console.log('send'+  this.przeludnienie+','
+      +this.klimat+','+
+       + this.polityka+','+
+       + this.zasoby)
       this.$root.$emit(
         "update",
         this.przeludnienie,
@@ -107,14 +116,26 @@ export default {
       );
     },
     //wysyłanie circle
-    circle() {
-      this.$root.$emit(
+    circle(arg) {
+        let rand = this.numbers[this.i];
+           if (arg === 1) {
+          this.$root.$emit(
         "circle",
-        this.przeludnienie,
-        this.klimat,
-        this.polityka,
-        this.zasoby
+        this.kartyInfo[rand].tak.przeludnienie,
+        this.kartyInfo[rand].tak.klimat,
+        this.kartyInfo[rand].tak.polityka,
+        this.kartyInfo[rand].tak.zasoby,
       );
+      } else {
+          this.$root.$emit(
+        "circle",
+        this.kartyInfo[rand].nie.przeludnienie,
+        this.kartyInfo[rand].nie.klimat,
+       this.kartyInfo[rand].nie.polityka,
+        this.kartyInfo[rand].nie.zasoby,
+      );
+      }
+  
     },
     circleLeave() {
       this.$root.$emit("circleLeave");
@@ -131,22 +152,6 @@ export default {
       }
       return a;
     },
-    over(arg) {
-      console.log(this.i);
-      let rand = this.numbers[this.i];
-      if (arg === 1) {
-        this.przeludnienie = this.kartyInfo[rand].tak.przeludnienie;
-        this.klimat = this.kartyInfo[rand].tak.klimat;
-        this.polityka = this.kartyInfo[rand].tak.polityka;
-        this.zasoby = this.kartyInfo[rand].tak.zasoby;
-      } else {
-        this.przeludnienie = this.kartyInfo[rand].nie.przeludnienie;
-        this.klimat = this.kartyInfo[rand].nie.klimat;
-        this.polityka = this.kartyInfo[rand].nie.polityka;
-        this.zasoby = this.kartyInfo[rand].nie.zasoby;
-      }
-      this.circle();
-    }
   },
   mounted() {
     //generate array

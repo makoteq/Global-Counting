@@ -1,10 +1,10 @@
 <template>
     <div class="contener_karty container text-center w-75 ">
       <div class="row">
-      <div class="w-25 timer col-sm text-center">{{przeludnienie}}  <font-awesome-icon icon="users" /><transition name="fade"> <i class="circle " style="display-inline " v-if="circle1">	&bull;</i></transition></div>
-      <div class="w-25 timer col-sm text-center">{{klimat}}  <font-awesome-icon style="font-size:1.1em" icon="leaf" /><transition name="fade"> <i class="circle" v-if="circle2">	&bull;</i></transition></div>
-      <div class="w-25 timer col-sm text-center">{{polityka}}  <font-awesome-icon icon="handshake" /><transition name="fade"> <i class="circle" v-if="circle3">	&bull;</i></transition></div>
-      <div class="w-25 timer col-sm text-center">{{zasoby}}  <font-awesome-icon icon="oil-can" /><transition name="fade"> <i class="circle" v-if="circle4">	&bull;</i></transition></div>
+      <div v-bind:class="{'effect-underline':circle1}" class="w-25 timer col-sm text-center ">{{przeludnienie}}  <font-awesome-icon icon="users" /></div>
+      <div v-bind:class="{'effect-underline':circle2}" class="w-25 timer col-sm text-center ">{{klimat}}  <font-awesome-icon style="font-size:1.1em" icon="leaf" /></div>
+      <div v-bind:class="{'effect-underline':circle3}" class="w-25 timer col-sm text-center ">{{polityka}}  <font-awesome-icon icon="handshake" /></div>
+      <div v-bind:class="{'effect-underline':circle4}" class="w-25 timer col-sm text-center ">{{zasoby}}  <font-awesome-icon icon="oil-can" /></div>
       </div>
     </div>
 </template>
@@ -92,6 +92,28 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.timer:after {
+  color: #fff;
+	content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  box-shadow: 0 5px 2px -2px white;
+  margin-top: 10px;
+  opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+}
+
+.effect-underline:after {
+  opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
 .progress{
   padding:0;
   width:100px;
@@ -106,10 +128,5 @@ export default {
   padding: 0;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .2s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
+
 </style>
