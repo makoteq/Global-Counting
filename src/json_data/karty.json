@@ -22,13 +22,13 @@
 
     {
         "tytul": "Program kontroli urodzeń",
-        "opis": "W naszym kraju rodzi się zbyt dużo dzieci. CZy mamy wprowadzić program kontroli urodzeń?",
+        "opis": "W naszym kraju rodzi się zbyt dużo dzieci. Czy mamy wprowadzić program kontroli urodzeń?",
         "img":"../assets/logo.png",
 
           "tak":{
             "przeludnienie": 1,
             "klimat": 0,
-            "polityka": 1,
+            "polityka": -1,
             "zasoby": 0
           },
 
