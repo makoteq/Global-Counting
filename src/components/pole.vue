@@ -1,27 +1,27 @@
 <template>
   <div>
     <div class="karta container w-75">
-      <h3 style="font-weight:900!important;" class="font-weight-bold">{{tytul}}</h3>
+      <h3 style="font-weight:900!important;" class="font-weight-bold">{{title}}</h3>
       <img class="img-thumbnail" :src="img" alt="photo">
-      <p class="font-weight-light">{{opis}}</p>
+      <p class="font-weight-light">{{des}}</p>
       <button v-if="end" :disabled="!disableSubmit" @click="submit()" class="btn-black btn-sm">NEXT</button>
     </div>
     <button
       v-if="end"
       :disabled="!disable"
       @mouseleave="circleLeave()"
-      @mouseover="circle('tak')"
+      @mouseover="circle('yes')"
       @click="click(1)"
       class="btn-black btn-lg"
-    >tak</button>
+    >Tak</button>
     <button
       v-if="end"
       :disabled="!disable"
       @mouseleave="circleLeave()"
-      @mouseover="circle('nie')"
+      @mouseover="circle('no')"
       @click="click(0)"
       class="btn-black btn-lg"
-    >nie</button>
+    >Nie</button>
     <router-link v-if="!end" to="results">
       <button  class="btn-dark btn-lg">Go to results</button>
     </router-link>
@@ -37,12 +37,12 @@ export default {
   data() {
     return {
       img: "",
-      tytul: "",
-      opis: "",
-      przeludnienie: 1,
-      klimat: 1,
-      polityka: 1,
-      zasoby: 1,
+      title: "",
+      des: "",
+      overpopulation: 1,
+      climate: 1,
+      politics: 1,
+      resources: 1,
       postacieInfo: postacie,
       kartyInfo: karty,
       count: 9,
@@ -71,8 +71,8 @@ export default {
         this.i = this.i + 1;
       }
       this.img = this.kartyInfo[this.numbers[this.i]].img;
-      this.tytul = this.kartyInfo[this.numbers[this.i]].tytul;
-      this.opis = this.kartyInfo[this.numbers[this.i]].opis;
+      this.title = this.kartyInfo[this.numbers[this.i]].title;
+      this.des = this.kartyInfo[this.numbers[this.i]].des;
       console.log(this.i + "mountede");
 
  
@@ -89,50 +89,50 @@ export default {
        let rand = this.numbers[this.i];
        console.log(this.i)
        if (arg == 1) {
-        this.przeludnienie = this.kartyInfo[rand].tak.przeludnienie;
-        this.klimat = this.kartyInfo[rand].tak.klimat;
-        this.polityka = this.kartyInfo[rand].tak.polityka;
-        this.zasoby = this.kartyInfo[rand].tak.zasoby;
+        this.overpopulation = this.kartyInfo[rand].yes.overpopulation;
+        this.climate = this.kartyInfo[rand].yes.climate;
+        this.politics = this.kartyInfo[rand].yes.politics;
+        this.resources = this.kartyInfo[rand].yes.resources;
       } else {
-        this.przeludnienie = this.kartyInfo[rand].nie.przeludnienie;
-        this.klimat = this.kartyInfo[rand].nie.klimat;
-        this.polityka = this.kartyInfo[rand].nie.polityka;
-        this.zasoby = this.kartyInfo[rand].nie.zasoby;
+        this.overpopulation = this.kartyInfo[rand].no.overpopulation;
+        this.climate = this.kartyInfo[rand].no.climate;
+        this.politics = this.kartyInfo[rand].no.politics;
+        this.resources = this.kartyInfo[rand].no.resources;
       }
     },
-    //wysyłanie danych zmian
+    //wysyłano danych zmian
     send() {
       console.log(this.i)
-      console.log('send'+  this.przeludnienie+','
-      +this.klimat+','+
-       + this.polityka+','+
-       + this.zasoby)
+      console.log('send'+  this.overpopulation+','
+      +this.climate+','+
+       + this.politics+','+
+       + this.resources)
       this.$root.$emit(
         "update",
-        this.przeludnienie,
-        this.klimat,
-        this.polityka,
-        this.zasoby
+        this.overpopulation,
+        this.climate,
+        this.politics,
+        this.resources
       );
     },
-    //wysyłanie circle
+    //wysyłano circle
     circle(arg) {
         let rand = this.numbers[this.i];
            if (arg === 1) {
           this.$root.$emit(
         "circle",
-        this.kartyInfo[rand].tak.przeludnienie,
-        this.kartyInfo[rand].tak.klimat,
-        this.kartyInfo[rand].tak.polityka,
-        this.kartyInfo[rand].tak.zasoby,
+        this.kartyInfo[rand].yes.overpopulation,
+        this.kartyInfo[rand].yes.climate,
+        this.kartyInfo[rand].yes.politics,
+        this.kartyInfo[rand].yes.resources,
       );
       } else {
           this.$root.$emit(
         "circle",
-        this.kartyInfo[rand].nie.przeludnienie,
-        this.kartyInfo[rand].nie.klimat,
-       this.kartyInfo[rand].nie.polityka,
-        this.kartyInfo[rand].nie.zasoby,
+        this.kartyInfo[rand].no.overpopulation,
+        this.kartyInfo[rand].no.climate,
+       this.kartyInfo[rand].no.politics,
+        this.kartyInfo[rand].no.resources,
       );
       }
   
@@ -140,7 +140,7 @@ export default {
     circleLeave() {
       this.$root.$emit("circleLeave");
     },
-    //losowamnie
+    //losowamno
     random(a) {
       //mieszanko tablic
       let j, x, i;
@@ -165,9 +165,9 @@ export default {
       console.log("lose" + arg);
       this.disable = 0;
       this.disableSubmit = 0;
-      this.tytul = this.postacieInfo[arg].tytul;
-      this.opis = this.postacieInfo[arg].opis;
-      // this.opis=this.postacie.arg;
+      this.title = this.postacieInfo[arg].title;
+      this.des = this.postacieInfo[arg].des;
+      // this.des=this.postacie.arg;
       //   this.$router.push({name:'results'})
     });
     //losowanko
@@ -177,8 +177,8 @@ export default {
     let rand = this.numbers[this.i];
     //  this.down(this.numbers[this.i]);
     this.img = this.kartyInfo[rand].img;
-    this.tytul = this.kartyInfo[rand].tytul;
-    this.opis = this.kartyInfo[rand].opis;
+    this.title = this.kartyInfo[rand].title;
+    this.des = this.kartyInfo[rand].des;
   }
 };
 </script>

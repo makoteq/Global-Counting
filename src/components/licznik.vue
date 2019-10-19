@@ -1,10 +1,10 @@
 <template>
     <div class="contener_karty container text-center w-75 ">
       <div class="row">
-      <div v-bind:class="{'effect-underline':circle1}" class="w-25 timer col-sm text-center ">{{przeludnienie}}  <font-awesome-icon icon="users" /></div>
-      <div v-bind:class="{'effect-underline':circle2}" class="w-25 timer col-sm text-center ">{{klimat}}  <font-awesome-icon style="font-size:1.1em" icon="leaf" /></div>
-      <div v-bind:class="{'effect-underline':circle3}" class="w-25 timer col-sm text-center ">{{polityka}}  <font-awesome-icon icon="handshake" /></div>
-      <div v-bind:class="{'effect-underline':circle4}" class="w-25 timer col-sm text-center ">{{zasoby}}  <font-awesome-icon icon="oil-can" /></div>
+      <div v-bind:class="{'effect-underline':circle1}" class="w-25 timer col-sm text-center ">{{overpopulation}}  <font-awesome-icon icon="users" /></div>
+      <div v-bind:class="{'effect-underline':circle2}" class="w-25 timer col-sm text-center ">{{climate}}  <font-awesome-icon style="font-size:1.1em" icon="leaf" /></div>
+      <div v-bind:class="{'effect-underline':circle3}" class="w-25 timer col-sm text-center ">{{politics}}  <font-awesome-icon icon="handshake" /></div>
+      <div v-bind:class="{'effect-underline':circle4}" class="w-25 timer col-sm text-center ">{{resources}}  <font-awesome-icon icon="oil-can" /></div>
       </div>
     </div>
 </template>
@@ -14,10 +14,10 @@ export default {
   name: "licznik",
   data() {
     return {
-      przeludnienie:15,
-      klimat:15,
-      polityka:15,
-      zasoby:15,
+      overpopulation:15,
+      climate:15,
+      politics:15,
+      resources:15,
       circle1:0,
       circle2:0,
       circle3:0,
@@ -27,28 +27,28 @@ export default {
   methods: {
     all(){
       let time =2;
-    this.polityka-=time
-    this.klimat-=time
-    this.przeludnienie-=time
-    this.zasoby-=time
+    this.overpopulation-=time
+    this.climate-=time
+    this.politics-=time
+    this.resources-=time
     }
   },
   mounted() {
-   this.$root.$on('update',(przeludnienie,klimat,polityka,zasoby)=>
+   this.$root.$on('update',(overpopulation,climate,politics,resources)=>
    {
   // this.all();
-    this.polityka+=polityka*5
-    this.klimat+=klimat*5
-    this.przeludnienie+=przeludnienie*5
-    this.zasoby+=zasoby*5
+    this.politics+=politics*5
+    this.climate+=climate*5
+    this.overpopulation+=overpopulation*5
+    this.resources+=resources*5
    
-   if(this.przeludnienie==0){
+   if(this.overpopulation==0){
    this.$root.$emit("lose",0);
-   }else if(this.klimat==0){
+   }else if(this.climate==0){
    this.$root.$emit("lose",1);
-   }else if(this.polityka==0){
+   }else if(this.politics==0){
    this.$root.$emit("lose",2);
-   }else if(this.zasoby==0) {
+   }else if(this.resources==0) {
        this.$root.$emit("lose",3);
    }
      
@@ -62,24 +62,24 @@ export default {
       this.circle3=0
       this.circle4=0
    })
-   this.$root.$on('circle',(przeludnienie,klimat,polityka,zasoby)=>
+   this.$root.$on('circle',(overpopulation,climate,politics,resources)=>
    {
-     if(przeludnienie!=0){
+     if(overpopulation!=0){
        this.circle1=1;
      }else{
        this.circle1=0
      }
-     if(klimat!=0){
+     if(climate!=0){
        this.circle2=1;
      }else{
        this.circle2=0
      }
-     if(polityka!=0){
+     if(politics!=0){
        this.circle3=1;
      }else{
        this.circle3=0
      }
-     if(zasoby!=0){
+     if(resources!=0){
        this.circle4=1;
      }else{
        this.circle4=0
