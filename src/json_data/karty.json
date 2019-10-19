@@ -21,26 +21,6 @@
     },
 
     {
-        "title": "Program kontroli urodzeń",
-        "des": "W naszym kraju rodzi się zbyt dużo dzieci. CZy mamy wprowadzić program kontroli urodzeń?",
-        "img":"../assets/logo.png",
-
-          "yes":{
-            "overpopulation": 1,
-            "climate": 0,
-            "politics": 1,
-            "resources": 0
-          },
-
-          "no":{
-            "overpopulation": -1,
-            "climate": 0,
-            "politics": 1,
-            "resources": 0
-          }
-    },
-
-    {
       "title":"Oceanowy Odkurzacz",
       "des":"Naukowcy proszą ciebie o dofinansowano w ramach wynalazku czyszczącego oceany z mikroplastik. Czy przydzielić środki?",
       "img":"../assets/logo.png",
