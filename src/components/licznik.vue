@@ -1,14 +1,11 @@
 <template>
     <div class="contener_karty container text-center w-75 ">
       <div class="row">
-      <div v-bind:class="{'effect-underline':circle1}" class="w-25 timer col-sm text-center ">{{overpopulation}}<br>  <font-awesome-icon icon="users" /></div>
-      <div v-bind:class="{'effect-underline':circle2}" class="w-25 timer col-sm text-center ">{{climate}} <br>  <font-awesome-icon style="font-size:1.1em" icon="leaf" /></div>
-      <div v-bind:class="{'effect-underline':circle3}" class="w-25 timer col-sm text-center ">{{politics}} <br>  <font-awesome-icon icon="handshake" /></div>
-      <div v-bind:class="{'effect-underline':circle4}" class="w-25 timer col-sm text-center ">{{resources}} <br>  <font-awesome-icon icon="oil-can" /></div>
-        <animated-number :value="overpopulation" :formatValue="formatToPrice" :duration="duration"/>
-        <animated-number :value="climate" :formatValue="formatToPrice" :duration="duration"/>
-        <animated-number :value="politics" :formatValue="formatToPrice" :duration="duration"/>
-        <animated-number :value="resources" :formatValue="formatToPrice" :duration="duration"/>
+      <div v-bind:class="{'effect-underline':circle1}" class="w-25 timer col-sm text-center "><animated-number class="num"  :value="overpopulation" :formatValue="formatToPrice" :duration="duration"/><br>  <font-awesome-icon icon="users" /></div>
+      <div v-bind:class="{'effect-underline':circle2}" class="w-25 timer col-sm text-center "> <animated-number class="num" :value="climate" :formatValue="formatToPrice" :duration="duration"/> <br>  <font-awesome-icon style="font-size:1.1em" icon="leaf" /></div>
+      <div v-bind:class="{'effect-underline':circle3}" class="w-25 timer col-sm text-center "><animated-number class="num"  :value="politics" :formatValue="formatToPrice" :duration="duration"/> <br>  <font-awesome-icon icon="handshake" /></div>
+      <div v-bind:class="{'effect-underline':circle4}" class="w-25 timer col-sm text-center "><animated-number class="num"  :value="resources" :formatValue="formatToPrice" :duration="duration"/><br>  <font-awesome-icon icon="oil-can" /></div>
+   
       </div>
     </div>
 </template>
@@ -36,7 +33,7 @@ export default {
   },
   methods: {
      formatToPrice(value) {
-      return `<h4>${Number(value).toFixed(0)}  </h4>`;
+      return `${Number(value).toFixed(0)}`;
     },
     increase(val) {
       this.value = Number(this.value) + val;
@@ -148,12 +145,8 @@ export default {
 }
 .timer {
   font-family: 'Source Code Pro', monospace;
-  font-size:2em;
+    font-size:2em;
   font-weight: bold;
   padding: 0;
 }
-i{
-  font-size:0.8em;
-}
-
 </style>
