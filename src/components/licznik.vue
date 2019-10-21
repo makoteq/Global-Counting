@@ -1,10 +1,10 @@
 <template>
     <div class="contener_karty container text-center w-75 ">
       <div class="row">
-      <div v-bind:class="{'effect-underline':circle1}" class="w-25 timer col-sm text-center ">{{overpopulation}}  <font-awesome-icon icon="users" /></div>
-      <div v-bind:class="{'effect-underline':circle2}" class="w-25 timer col-sm text-center ">{{climate}}  <font-awesome-icon style="font-size:1.1em" icon="leaf" /></div>
-      <div v-bind:class="{'effect-underline':circle3}" class="w-25 timer col-sm text-center ">{{politics}}  <font-awesome-icon icon="handshake" /></div>
-      <div v-bind:class="{'effect-underline':circle4}" class="w-25 timer col-sm text-center ">{{resources}}  <font-awesome-icon icon="oil-can" /></div>
+      <div v-bind:class="{'effect-underline':circle1}" class="w-25 timer col-sm text-center ">{{overpopulation}}<i>lat</i><br>  <font-awesome-icon icon="users" /></div>
+      <div v-bind:class="{'effect-underline':circle2}" class="w-25 timer col-sm text-center ">{{climate}}<i>lat</i> <br>  <font-awesome-icon style="font-size:1.1em" icon="leaf" /></div>
+      <div v-bind:class="{'effect-underline':circle3}" class="w-25 timer col-sm text-center ">{{politics}}<i>lat</i> <br>  <font-awesome-icon icon="handshake" /></div>
+      <div v-bind:class="{'effect-underline':circle4}" class="w-25 timer col-sm text-center ">{{resources}}<i>lat</i> <br>  <font-awesome-icon icon="oil-can" /></div>
       </div>
     </div>
 </template>
@@ -42,13 +42,13 @@ export default {
     this.overpopulation+=overpopulation*5
     this.resources+=resources*5
    
-   if(this.overpopulation==0){
+   if(this.overpopulation===0){
    this.$root.$emit("lose",0);
-   }else if(this.climate==0){
+   }else if(this.climate===0){
    this.$root.$emit("lose",1);
-   }else if(this.politics==0){
+   }else if(this.politics===0){
    this.$root.$emit("lose",2);
-   }else if(this.resources==0) {
+   }else if(this.resources===0) {
        this.$root.$emit("lose",3);
    }
      
@@ -64,22 +64,22 @@ export default {
    })
    this.$root.$on('circle',(overpopulation,climate,politics,resources)=>
    {
-     if(overpopulation!=0){
+     if(overpopulation!==0){
        this.circle1=1;
      }else{
        this.circle1=0
      }
-     if(climate!=0){
+     if(climate!==0){
        this.circle2=1;
      }else{
        this.circle2=0
      }
-     if(politics!=0){
+     if(politics!==0){
        this.circle3=1;
      }else{
        this.circle3=0
      }
-     if(resources!=0){
+     if(resources!==0){
        this.circle4=1;
      }else{
        this.circle4=0
@@ -127,6 +127,8 @@ export default {
   font-weight: bold;
   padding: 0;
 }
-
+i{
+  font-size:0.8em;
+}
 
 </style>

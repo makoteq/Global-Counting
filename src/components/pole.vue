@@ -10,7 +10,7 @@
       v-if="end"
       :disabled="!disable"
       @mouseleave="circleLeave()"
-      @mouseover="circle('yes')"
+      @mouseover="circle(1)"
       @click="click(1)"
       class="btn-black btn-lg"
     >Tak</button>
@@ -18,7 +18,7 @@
       v-if="end"
       :disabled="!disable"
       @mouseleave="circleLeave()"
-      @mouseover="circle('no')"
+      @mouseover="circle(0)"
       @click="click(0)"
       class="btn-black btn-lg"
     >Nie</button>
@@ -103,10 +103,6 @@ export default {
     //wysyłano danych zmian
     send() {
       console.log(this.i)
-      console.log('send'+  this.overpopulation+','
-      +this.climate+','+
-       + this.politics+','+
-       + this.resources)
       this.$root.$emit(
         "update",
         this.overpopulation,
@@ -155,7 +151,7 @@ export default {
   },
   mounted() {
     //generate array
-    for (let i = 0; i < this.count + 1; i++) {
+    for (let i = 0; i < this.count ; i++) {
       this.numbers.push(i);
       console.log(i);
     }
@@ -168,7 +164,7 @@ export default {
       this.title = this.postacieInfo[arg].title;
       this.des = this.postacieInfo[arg].des;
       // this.des=this.postacie.arg;
-      //   this.$router.push({name:'results'})
+      this.$router.replace({name:'results', params:{years:this.years,why:arg}})
     });
     //losowanko
     this.numbers = this.random(this.numbers);
