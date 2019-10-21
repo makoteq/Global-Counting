@@ -38,7 +38,7 @@ export default {
         this.why='Przeludnienie'
         break;
          case 1:
-           this.why='Przegrzanie planety'
+           this.why='Klęska Żywiołowa ogarniająca cały świat'
         break;
          case 2:
            this.why='Wojny, aspekty polityczne'

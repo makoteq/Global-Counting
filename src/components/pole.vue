@@ -22,7 +22,7 @@
       @click="click(0)"
       class="btn-black btn-lg"
     >Nie</button>
-    <router-link v-if="!end" to="results">
+    <router-link v-if="!end" :to="{ name: 'results', params: {years: this.years,why:this.why } }">
       <button  class="btn-dark btn-lg">Go to results</button>
     </router-link>
     <p class="years fixed-bottom">{{years}} lata u władzy</p>
@@ -52,7 +52,8 @@ export default {
       disableSubmit: 0,
       years: 0,
       end: 1,
-      wybor:0
+      wybor:0,
+      why:0
     };
   },
   methods: {
@@ -70,9 +71,11 @@ export default {
       } else {
         this.i = this.i + 1;
       }
+      if(this.end==1){
       this.img = this.kartyInfo[this.numbers[this.i]].img;
       this.title = this.kartyInfo[this.numbers[this.i]].title;
       this.des = this.kartyInfo[this.numbers[this.i]].des;
+      }
       console.log(this.i + "mountede");
 
  
@@ -158,13 +161,17 @@ export default {
 
     this.$root.$on("lose", arg => {
       this.end = 0;
-      console.log("lose" + arg);
+      console.log(this.postacieInfo[arg].title);
       this.disable = 0;
       this.disableSubmit = 0;
-      this.title = this.postacieInfo[arg].title;
+     
+      this.why=arg;
+       this.title = this.postacieInfo[arg].title;
       this.des = this.postacieInfo[arg].des;
+      this.title = this.postacieInfo[arg].title;
+      this.img = this.postacieInfo[arg].img;
       // this.des=this.postacie.arg;
-      this.$router.replace({name:'results', params:{years:this.years,why:arg}})
+    //  this.$router.replace({name:'results', params:{years:this.years,why:arg}})
     });
     //losowanko
     this.numbers = this.random(this.numbers);
