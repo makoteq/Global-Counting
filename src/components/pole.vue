@@ -4,11 +4,9 @@
       <h3 style="font-weight:900!important;" class="font-weight-bold">{{title}}</h3>
       <img class="img-thumbnail" :src="img" alt="photo">
       <p class="font-weight-light">{{des}}</p>
-      <button v-if="end" :disabled="!disableSubmit" @click="submit()" class="btn-black btn-sm">NEXT</button>
     </div>
     <button
       v-if="end"
-      :disabled="!disable"
       @mouseleave="circleLeave()"
       @mouseover="circle(1)"
       @click="click(1)"
@@ -16,14 +14,13 @@
     >Tak</button>
     <button
       v-if="end"
-      :disabled="!disable"
       @mouseleave="circleLeave()"
       @mouseover="circle(0)"
       @click="click(0)"
       class="btn-black btn-lg"
     >Nie</button>
     <router-link v-if="!end" :to="{ name: 'results', params: {years: this.years,why:this.why } }">
-      <button  class="btn-dark btn-lg">Go to results</button>
+      <button  class="btn-dark btn-lg">Wyniki</button>
     </router-link>
     <p class="years fixed-bottom">{{years}} lata u władzy</p>
   </div>
@@ -48,8 +45,6 @@ export default {
       count: 9,
       numbers: [],
       i: 0,
-      disable: 1,
-      disableSubmit: 0,
       years: 0,
       end: 1,
       wybor:0,
@@ -60,14 +55,11 @@ export default {
     //next
     submit() {
       
-      this.disableSubmit = 0;
       this.years++;
-      this.disable = 1;
       this.circleLeave();
       this.down(this.wybor);
       this.send();
           if (this.i === this.count - 1) {
-        this.disable = 0;
       } else {
         this.i = this.i + 1;
       }
@@ -82,9 +74,20 @@ export default {
     },
     //click
     click(arg) {
+      this.years++;
+      this.circleLeave();
+      this.down(this.wybor);
+      this.send();
+        if (this.i === this.count - 1) {
+      } else {
+      this.i = this.i + 1;
+      }
+      if(this.end==1){
+      this.img = this.kartyInfo[this.numbers[this.i]].img;
+      this.title = this.kartyInfo[this.numbers[this.i]].title;
+      this.des = this.kartyInfo[this.numbers[this.i]].des;
+      }
       this.wybor = arg;
-      this.disableSubmit = 1;
-      this.disable = 0;
       console.log()
     },
     //download
@@ -162,8 +165,6 @@ export default {
     this.$root.$on("lose", arg => {
       this.end = 0;
       console.log(this.postacieInfo[arg].title);
-      this.disable = 0;
-      this.disableSubmit = 0;
      
       this.why=arg;
        this.title = this.postacieInfo[arg].title;
