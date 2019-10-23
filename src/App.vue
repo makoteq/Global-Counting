@@ -1,9 +1,18 @@
 <template>
   <div id="app">
     <router-view/>
+    <footerComp/>
   </div>
 </template>
 
+<script>
+import footerComp from '@/components/footerComp.vue'
+  export default {
+    components: {
+      footerComp,
+    },
+  }
+</script>
 <style lang="scss">
 @import './assets/colors.scss';
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900&display=swap&subset=latin-ext');
@@ -28,5 +37,9 @@
       color: #42b983;
     }
   }
+}
+a{
+  text-decoration:none;
+
 }
 </style>

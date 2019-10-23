@@ -22,7 +22,6 @@
     <router-link v-if="!end" :to="{ name: 'results', params: {years: this.years,why:this.why } }">
       <button  class="btn-dark btn-lg">Wyniki</button>
     </router-link>
-    <p class="years fixed-bottom">{{years}} lata u władzy</p>
   </div>
 </template>
 

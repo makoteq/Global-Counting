@@ -1,6 +1,7 @@
 <template>
   <div class="results">
     <h2>Wyniki</h2>
+    <div class="container">
     <table class="table table-striped table-dark">
   <thead>
     <tr>
@@ -14,11 +15,22 @@
     <tr>
       <th scope="row">1</th>
       <td class="text-warning" >{{years}}</td>
-      <td class="text-success" > {{time}}</td>
+      <td class="text-success" >Coming soon!</td>
       <td class="text-danger" >{{why}}</td>
     </tr>
   </tbody>
 </table>
+</div>
+<div class="card text-white bg-dark mb-3" style="max-width: 500px; margin:0 auto;">
+  <div class="card-body">
+  <h3 class="card-header">Chcesz Działać?</h3>
+  <p class="card-body">Sprawdź poniższe linki by dowiedzic się więcej!</p>
+  <a  href="https://www.greenpeace.org/poland/" target="_blank">Greenpeace</a><br>
+  <a href="https://www.wwf.pl/" target="_blank">WWF</a><br>
+  <a href="https://www.foei.org/" target="_blank">Friends of the Earth International</a>
+  </div>
+</div>
+
   </div>
 </template>
 <script>
