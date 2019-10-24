@@ -41,7 +41,7 @@ export default {
       resources: 1,
       postacieInfo: postacie,
       kartyInfo: karty,
-      count: 9,
+      count: 13,
       numbers: [],
       i: 0,
       years: 0,

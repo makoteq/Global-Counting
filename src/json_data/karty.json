@@ -12,7 +12,7 @@
         },
 
         "no":{
-          "overpopulation": 1,
+          "overpopulation": 0,
           "climate": 0,
           "politics": -1,
           "resources": 0
@@ -29,7 +29,7 @@
         "overpopulation": 0,
         "climate": 1,
         "politics": 0,
-        "resources": 0
+        "resources": -1
       },
 
       "no":{
@@ -48,21 +48,21 @@
       "yes":{
         "overpopulation": 0,
         "climate": 0,
-        "politics": 1,
+        "politics": 0,
         "resources": -1
       },
 
       "no":{
         "overpopulation": 0,
         "climate": 0,
-        "politics": -1,
+        "politics": 0,
         "resources": 1
       }
     },
 
     {
       "title":"Plastiki w piecach",
-      "des":"Ludzie palą za dużo plastku w piecach. Interweniować?",
+      "des":"Ludzie palą za dużo plastiku w piecach. Interweniować?",
       "img":"../assets/swiat.png",
 
       "yes":{
@@ -88,21 +88,21 @@
       "yes":{
         "overpopulation": 0,
         "climate": -1,
-        "politics": 1,
+        "politics": 0,
         "resources": -1
       },
 
       "no":{
         "overpopulation": 0,
         "climate": 1,
-        "politics": -1,
+        "politics": 0,
         "resources": 1
       }
     },
 
     {
       "title":"Ścieki (fabryki)",
-      "des":"Fabryki produkują za dużo szkodliwych ścieków. Wprowadzić grzywnę za nooczyszczano ścieków?",
+      "des":"Fabryki produkują za dużo szkodliwych ścieków. Wprowadzić grzywnę za nieoczyszczane ścieków?",
       "img":"../assets/swiat.png",
 
       "yes":{
@@ -162,7 +162,7 @@
 
     {
       "title":"Amazonia w ogniu",
-      "des":"Amozonia płono! Służby zajmujące się gaszenom pożaru proszą o pomoc. Mamy pomóc?",
+      "des":"Amozonia płonie! Służby zajmujące się gaszeniem pożaru proszą o pomoc. Mamy pomóc?",
       "img":"../assets/swiat.png",
 
       "yes":{
@@ -177,6 +177,106 @@
         "climate": -1,
         "politics": -1,
         "resources": -1
+      }
+    },
+
+    {
+      "title":"Elektrownia jądrowa",
+      "des":"Kierownik jednej z naszych elektrowni jądrowych prosi o pozwolenie na zwiększenie mocy reaktora. Czy wyrażasz zgodę?",
+      "img":"../assets/swiat.png",
+
+      "yes":{
+        "overpopulation": 2,
+        "climate": -2,
+        "politics": -2,
+        "resources": -2
+      },
+
+       "no":{
+        "overpopulation": -2,
+        "climate": 0,
+        "politics": 0,
+        "resources": 0
+      }
+    },
+
+    {
+      "title":"Sytuacja sanitarna w Afryce",
+      "des":"Wpływowy przedsiębiorca prosi o dofinansowanie projektu na rzecz poprawy sytuacji sanitarnej w Afryce. Dofinansować?",
+      "img":"../assets/swiat.png",
+
+      "yes":{
+        "overpoplation": 2,
+        "climate": 0,
+        "politics": 0,
+        "resources": -1
+      },
+
+       "no":{
+        "overpoplation": 0,
+        "climate": 0,
+        "politics": -2,
+        "resources": 0
+      }
+    },
+
+    {
+      "title":"Elektrownie słoneczne",
+      "des":"Minister ekologii sugeruje aby zamienić elektrownie węglowe na słoneczne. Czy wyrażasz na to zgodę?",
+      "img":"../assets/swiat.png",
+
+      "yes":{
+        "overpopulation": 0,
+        "climate": 1,
+        "politics": 0,
+        "resources": -1
+      },
+
+       "no":{
+        "overpopulation": 0,
+        "climate": -1,
+        "politics": 0,
+        "resources": 0
+      }
+    },
+
+    {
+      "title":"Oczyszczacze powietrza",
+      "des":"Stan powietrza w stolicy jest krytyczny. Powinniśmy zainwestować w stacje oczyszczania powierza.",
+      "img":"../assets/swiat.png",
+
+      "yes":{
+        "overpopulation": 0,
+        "climate": 1,
+        "politics": 0,
+        "resources": -1
+      },
+
+       "no":{
+        "overpopulation": 0,
+        "climate": -1,
+        "politics": 0,
+        "resources": 0
+      }
+    },
+
+    {
+      "title":"Wycinka lasu",
+      "des":"Pewna ekipa chce wyciąć kawałek lasu na własne cele. Pozwolić?",
+      "img":"../assets/swiat.png",
+
+      "yes":{
+        "overpopulation": 0,
+        "climate": -1,
+        "politics": 0,
+        "resources": -1
+      },
+
+       "no":{
+        "overpopulation": 0,
+        "climate": 0,
+        "politics": 0,
+        "resources": 0
       }
     }
   ]
