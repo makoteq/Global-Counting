@@ -3,9 +3,11 @@
       <div class="card text-white bg-dark mb-3" style="max-width: 500px; margin:0 auto;">
   <div  class="card-body">
   <h2  class="card-header">Global Counting</h2>
-  <p class="card-body" >  Global Counting to gra edukacyjno-taktyczna w której wcielasz się w przywódcę nieokreślonej grupy społecznej.
-      Twoim nadrzędnym zadaniem jest zapobiec wszelkim kataklizmom i konfliktom zbrojeniowym.
-       Lecz uważaj! każda twoja decyzja ma znaczący wpływ na liczczniki pokazujące planowany koniec świata przedsawionych przy pomocy czterech kategorii.
+  <p class="card-body" >Global Counting to gra edukacyjno-taktyczna omawiająca problemy globalne.
+        Akcja rozgrywa się w alternatywnym świecie w czasach rozwoju ery atomu. W grze wcielasz się w przywódcę pewnego kroju.
+        Twoim nadrzędnym zadaniem jest zapobiec wszelkim kataklizmom, konfliktom zbrojeniowym.
+        Jednak jest pewne ale! Każda decyzja ma znaczący wpływ na przyszłość świata, która uzależniona jest od 4 liczników ( przeludnienie, klimat, polityka, zasoby).
+        Pamiętaj wyzerowanie jakiegokolwiek z licznków prowadzi do końca świata!
        </p>
        <h4  class="card-header text-succes">Jak grać</h4>
        <div class="card-body">
