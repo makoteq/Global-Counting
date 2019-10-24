@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="karta container w-75">
-      <h3 style="font-weight:900!important;" class="font-weight-bold">{{title}}</h3>
+      <h3 style="font-weight:900!important;" class="text-success font-weight-bold ">{{title}}</h3>
       <img class="img-thumbnail" style="min-width:30vw; max-width:60vw" :src="img" alt="photo">
-      <p class="font-weight-light">{{des}}</p>
+      <p class=" font-weight-light">{{des}}</p>
     </div>
     <button
       v-if="end"
@@ -60,18 +60,18 @@ export default {
       this.down(this.wybor);
       this.send();
         if (this.i === this.count - 1) {
-          this.end=0;
+          this.why=4;
+        this.des = this.postacieInfo[0].des;
+        this.title = this.postacieInfo[0].title;
+        this.img = this.postacieInfo[0].img;
+        this.end=0;
       } else {
       this.i = this.i + 1;
       }
-      if(this.end==1){
+      if(this.end===1){
       this.img = this.kartyInfo[this.numbers[this.i]].img;
       this.title = this.kartyInfo[this.numbers[this.i]].title;
       this.des = this.kartyInfo[this.numbers[this.i]].des;
-      }else{
-         this.des = this.postacieInfo[0].des;
-      this.title = this.postacieInfo[0].title;
-      this.img = this.postacieInfo[0].img;
       }
       this.wybor = arg;
       console.log()

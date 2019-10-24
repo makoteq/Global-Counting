@@ -1,18 +1,18 @@
 [
     {
       "title": "Zwycięstwo",
-      "des": "Witaj jestem Zwycięstwo. Twoje żądy zapobiegły kataklizmowi. Możesz być z siebie dumny!",
+      "des": "Witaj jestem Zwycięstwo. Twoje rządy zapobiegły kataklizmowi. Możesz być z siebie dumny!",
       "img":"../assets/zwyciestwo.png"
-    },
-    {
-      "title": "Wojna",
-      "des": "Witaj, jestem Wojna. Twoje działania dobrowadziły do totalnej samozagłady ludzkości,liczę że następnym razem podejmiesz bardziej trafne decyzje",
-      "img":"../assets/smierc.png"
     },
     {
       "title": "Głód",
       "des": "Witaj, jestem Głod. Twoje działania dobrowadziły do masowego głodu, licze że następnym razem podejmiesz bardziej trafne decyzje",
       "img":"../assets/smierc.png"
+    },
+    {
+      "title": "Wojna",
+      "des": "Witaj, jestem Wojna. Twoje działania dobrowadziły do totalnej samozagłady ludzkości,liczę że następnym razem podejmiesz bardziej trafne decyzje",
+      "img":"../assets/wojna.png"
     },
     {
       "title": "Śmierć",

@@ -23,7 +23,7 @@
 </div>
 <div class="card text-white bg-dark mb-3" style="max-width: 500px; margin:0 auto;">
   <div class="card-body">
-  <h3 class="card-header">Chcesz Działać?</h3>
+  <h3 class="text-success card-header">Chcesz Działać?</h3>
   <p class="card-body">Sprawdź poniższe linki by dowiedzic się więcej!</p>
   <a  href="https://www.greenpeace.org/poland/" target="_blank">Greenpeace</a><br>
   <a href="https://www.wwf.pl/" target="_blank">WWF</a><br>
@@ -57,6 +57,9 @@ export default {
         break;
          case 3:
              this.why='Wyeksplatowane zasoby naturalne'
+        break;
+        case 4:
+             this.why='Zwycięstwo'
         break;
         default:
     }
