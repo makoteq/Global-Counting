@@ -24,7 +24,7 @@
 <div class="card text-white bg-dark mb-3" style="max-width: 500px; margin:0 auto;">
   <div class="card-body">
   <h3 class="text-success card-header">Chcesz Działać?</h3>
-  <p class="card-body">Sprawdź poniższe linki by dowiedzic się więcej!</p>
+  <p class="card-body">Uważamy że nasza gra, chodź totalnie obstrakcyjna to przynajmniej w niewielkiej części oddaje to jak bliska jest klęska ekologiczna, właśnie dlatego warto działać. Sprawdź poniższe linki by dowiedzic się więcej!</p>
   <a  href="https://www.greenpeace.org/poland/" target="_blank">Greenpeace</a><br>
   <a href="https://www.wwf.pl/" target="_blank">WWF</a><br>
   <a href="https://www.foei.org/" target="_blank">Friends of the Earth International</a>

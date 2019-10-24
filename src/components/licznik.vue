@@ -65,11 +65,11 @@ export default {
   
 
    if(this.overpopulation===0){
-   this.$root.$emit("lose",2);
+   this.$root.$emit("lose",1);
    }else if(this.climate===0){
    this.$root.$emit("lose",3);
    }else if(this.politics===0){
-   this.$root.$emit("lose",1);
+   this.$root.$emit("lose",2);
    }else if(this.resources===0) {
        this.$root.$emit("lose",3);
    }
