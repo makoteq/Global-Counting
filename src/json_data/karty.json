@@ -2,7 +2,7 @@
     {
       "title": "Uchodźcy przy granicy",
       "des": "Uchodźdzcy z bliskiego wschodu chcą wejsć do twojego kraju. Wpuścić ich?",
-      "img":"../assets/logo.png",
+      "img":"../assets/swiat.png",
 
         "yes":{
           "overpopulation": -1,
@@ -23,7 +23,7 @@
     {
       "title":"Oceanowy Odkurzacz",
       "des":"Naukowcy proszą ciebie o dofinansowano w ramach wynalazku czyszczącego oceany z mikroplastik. Czy przydzielić środki?",
-      "img":"../assets/logo.png",
+      "img":"../assets/swiat.png",
 
       "yes":{
         "overpopulation": 0,
@@ -43,7 +43,7 @@
     {
       "title":"Złoża uranu",
       "des":"Znaleźlismy duże złoża uranu. Czy mamy je wydobyć?",
-      "img":"../assets/logo.png",
+      "img":"../assets/swiat.png",
 
       "yes":{
         "overpopulation": 0,
@@ -63,7 +63,7 @@
     {
       "title":"Plastiki w piecach",
       "des":"Ludzie palą za dużo plastku w piecach. Interweniować?",
-      "img":"../assets/logo.png",
+      "img":"../assets/swiat.png",
 
       "yes":{
         "overpopulation": 0,
@@ -83,7 +83,7 @@
     {
       "title":"Ropa na morzu",
       "des":"Ostatnio nasi specjaliści odkryli złoża ropy naftowej na morzu. Czy powinniśmy zacząć ją wydobywać?",
-      "img":"../assets/logo.png",
+      "img":"../assets/swiat.png",
 
       "yes":{
         "overpopulation": 0,
@@ -103,7 +103,7 @@
     {
       "title":"Ścieki (fabryki)",
       "des":"Fabryki produkują za dużo szkodliwych ścieków. Wprowadzić grzywnę za nooczyszczano ścieków?",
-      "img":"../assets/logo.png",
+      "img":"../assets/swiat.png",
 
       "yes":{
         "overpopulation": 0,
@@ -123,7 +123,7 @@
     {
       "title":"Problem na bliskim wschodzie",
       "des":"Wojsko ma problemy na bliskim wschodzie. Dowództwo prosi cię o zezwoleno na ayes nuklearny. Zezwolić?",
-      "img":"../assets/logo.png",
+      "img":"../assets/swiat.png",
 
       "yes":{
         "overpopulation": 1,
@@ -143,7 +143,7 @@
     {
       "title":"Pożyczka na kampanię (eko)",
       "des":"Sojusznik prosi nasz kraj o pożyczkę pieniędzy na kampanmię ekologiczną. Czy powinniśmy mu pożyczyć te pieniądze?",
-      "img":"../assets/logo.png",
+      "img":"../assets/swiat.png",
 
       "yes":{
         "overpopulation": 0,
@@ -163,7 +163,7 @@
     {
       "title":"Amazonia w ogniu",
       "des":"Amozonia płono! Służby zajmujące się gaszenom pożaru proszą o pomoc. Mamy pomóc?",
-      "img":"../assets/logo.png",
+      "img":"../assets/swiat.png",
 
       "yes":{
         "overpopulation": 0,

@@ -23,10 +23,15 @@ import footerComp from '@/components/footerComp.vue'
   text-align: center;
   color: white;
     background-color: $main;
-   width:100vw;
-   height: 100vh;
+    background-size: cover;
+   width:100%;
+  min-height: 100vh;
    padding:0;
    margin: 0;
+}
+body{
+  min-height: 100vh;
+      background-size: cover;
 }
 #nav {
   padding: 30px;
