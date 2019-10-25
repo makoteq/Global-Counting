@@ -46,7 +46,6 @@ export default {
       i: 0,
       years: 0,
       end: 1,
-      wybor:0,
       why:0
     };
   },
@@ -57,7 +56,7 @@ export default {
     click(arg) {
       this.years++;
       this.circleLeave();
-      this.down(this.wybor);
+      this.down(arg);
       this.send();
         if (this.i === this.count - 1) {
           this.why=4;
@@ -73,7 +72,6 @@ export default {
       this.title = this.kartyInfo[this.numbers[this.i]].title;
       this.des = this.kartyInfo[this.numbers[this.i]].des;
       }
-      this.wybor = arg;
       console.log()
     },
     //download
@@ -85,7 +83,7 @@ export default {
         this.climate = this.kartyInfo[rand].yes.climate;
         this.politics = this.kartyInfo[rand].yes.politics;
         this.resources = this.kartyInfo[rand].yes.resources;
-      } else {
+      } else if( arg == 0){
         this.overpopulation = this.kartyInfo[rand].no.overpopulation;
         this.climate = this.kartyInfo[rand].no.climate;
         this.politics = this.kartyInfo[rand].no.politics;

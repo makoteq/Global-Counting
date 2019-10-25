@@ -1,7 +1,7 @@
 [
     {
       "title": "Uchodźcy przy granicy",
-      "des": "Uchodźdzcy z bliskiego wschodu chcą wejsć do twojego kraju. Wpuścić ich?",
+      "des": "Uchodźcy z Bliskiego Wschodu chcą wejsć do Twojego kraju. Wpuścić ich?",
       "img":"../assets/swiat.png",
 
         "yes":{
@@ -21,8 +21,8 @@
     },
 
     {
-      "title":"Oceanowy Odkurzacz",
-      "des":"Naukowcy proszą ciebie o dofinansowano w ramach wynalazku czyszczącego oceany z mikroplastik. Czy przydzielić środki?",
+      "title":"Oceanowy odkurzacz",
+      "des":"Naukowcy proszą Cię o dofinansowano w ramach wynalazku czyszczącego oceany z mikroplastik. Czy przydzielić środki?",
       "img":"../assets/swiat.png",
 
       "yes":{
