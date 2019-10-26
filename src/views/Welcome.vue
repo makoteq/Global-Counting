@@ -11,6 +11,13 @@ export default {
     components: {
     des
   },
+  mounted () {
+    if (this.$route.params.res==1){
+      location.reload();
+      console.log('elo');
+    }
+      console.log('elo');
+  },
 
 
 }

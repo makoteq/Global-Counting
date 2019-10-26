@@ -22,7 +22,7 @@
 
     {
       "title":"Oceanowy odkurzacz",
-      "des":"Naukowcy proszą Cię o dofinansowano w ramach wynalazku czyszczącego oceany z mikroplastik. Czy przydzielić środki?",
+      "des":"Naukowcy proszą Cię o dofinansowanie maszyny czyszczącej oceany z mikroplastiku. Czy przydzielić środki?",
       "img":"../assets/swiat.png",
 
       "yes":{
@@ -42,7 +42,7 @@
 
     {
       "title":"Złoża uranu",
-      "des":"Znaleźlismy duże złoża uranu. Czy mamy je wydobyć?",
+      "des":"Znaleźliśmy duże złoża uranu. Czy mamy je wydobyć?",
       "img":"../assets/swiat.png",
 
       "yes":{
@@ -62,7 +62,7 @@
 
     {
       "title":"Plastiki w piecach",
-      "des":"Ludzie palą za dużo plastiku w piecach. Interweniować?",
+      "des":"W społeczeństwie szerzy się moda na palenie plastiku w piecach. Interweniować?",
       "img":"../assets/swiat.png",
 
       "yes":{
@@ -101,8 +101,8 @@
     },
 
     {
-      "title":"Ścieki (fabryki)",
-      "des":"Fabryki produkują za dużo szkodliwych ścieków. Wprowadzić grzywnę za nieoczyszczane ścieków?",
+      "title":"Ścieki",
+      "des":"Fabryki produkują dużo szkodliwych ścieków. Wprowadzić grzywnę za nieoczyszczanie ścieków?",
       "img":"../assets/swiat.png",
 
       "yes":{
@@ -121,8 +121,8 @@
     },
 
     {
-      "title":"Problem na bliskim wschodzie",
-      "des":"Wojsko ma problemy na bliskim wschodzie. Dowództwo prosi cię o zezwoleno na ayes nuklearny. Zezwolić?",
+      "title":"Problem na Bliskim Wschodzie",
+      "des":"Wojsko ma problemy na Bliskim Wschodzie. Dowództwo prosi Cię o zezwoleieo na atak nuklearny. Zezwolić?",
       "img":"../assets/swiat.png",
 
       "yes":{
@@ -141,8 +141,8 @@
     },
 
     {
-      "title":"Pożyczka na kampanię (eko)",
-      "des":"Sojusznik prosi nasz kraj o pożyczkę pieniędzy na kampanmię ekologiczną. Czy powinniśmy mu pożyczyć te pieniądze?",
+      "title":"Pożyczka na kampanię",
+      "des":"Grupa aktywistów prosi nasz kraj o pożyczenie pieniędzy na kampanię ekologiczną. Czy powinniśmy im pomóc?",
       "img":"../assets/swiat.png",
 
       "yes":{
@@ -162,7 +162,7 @@
 
     {
       "title":"Amazonia w ogniu",
-      "des":"Amozonia płonie! Służby zajmujące się gaszeniem pożaru proszą o pomoc. Mamy pomóc?",
+      "des":"Amazonia płonie! Służby zajmujące się gaszeniem pożaru proszą o pomoc. Mamy pomóc?",
       "img":"../assets/swiat.png",
 
       "yes":{
@@ -222,7 +222,7 @@
 
     {
       "title":"Elektrownie słoneczne",
-      "des":"Minister ekologii sugeruje aby zamienić elektrownie węglowe na słoneczne. Czy wyrażasz na to zgodę?",
+      "des":"Minister środowiska sugeruje diamentralną zmianę sposobu pozyskiwania energii - z elektrownii węglowych na słoneczne. Czy wyrażasz na to zgodę?",
       "img":"../assets/swiat.png",
 
       "yes":{
@@ -242,7 +242,7 @@
 
     {
       "title":"Oczyszczacze powietrza",
-      "des":"Stan powietrza w stolicy jest krytyczny. Powinniśmy zainwestować w stacje oczyszczania powierza.",
+      "des":"Stan powietrza w stolicy jest krytyczny. Powinniśmy zainwestować w stacje oczyszczania powietrza.",
       "img":"../assets/swiat.png",
 
       "yes":{
