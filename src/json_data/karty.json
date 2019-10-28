@@ -206,14 +206,14 @@
       "img":"../assets/swiat.png",
 
       "yes":{
-        "overpoplation": 2,
+        "overpopulation": 2,
         "climate": 0,
         "politics": 0,
         "resources": -1
       },
 
        "no":{
-        "overpoplation": 0,
+        "overpopulation": 0,
         "climate": 0,
         "politics": -2,
         "resources": 0
